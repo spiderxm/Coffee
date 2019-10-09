@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,19 +10,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
-
-
-
-
-
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Enter your name"
+        android:id="@+id/edittxt"/>
 
     <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Toppings"
-            android:padding="16dp"/>
+        android:id="@+id/textView5"
+        style="@style/GreenText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Toppings" />
 
         <CheckBox
             android:id="@+id/checkBox"
@@ -33,15 +38,16 @@
         android:id="@+id/checkBox2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choclate ($6 per cup of coffee)"
+        android:text="Chocolate ($6 per cup of coffee)"
         android:onClick="choclate"/>
 
     <TextView
         android:id="@+id/textView"
+        style="@style/GreenText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="Quantity (Basic cost of one cup of coffee is $4)" />
+        android:text="Quantity (Basic cost of one cup of coffee is $5)" />
 
 
     <LinearLayout
@@ -60,6 +66,7 @@
             android:id="@+id/textView2"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="2"
             android:textStyle="bold" />
 
@@ -83,7 +90,13 @@
             android:layout_height="wrap_content"
             android:text="$10"
             android:textStyle="bold" />
-
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Any suggestions "
+            android:id="@+id/edittxt2"
+               />
         <Button
             android:id="@+id/button3"
             android:padding="16dp"
@@ -93,3 +106,4 @@
             android:text="ORDER" />
 
 </LinearLayout>
+</ScrollView>

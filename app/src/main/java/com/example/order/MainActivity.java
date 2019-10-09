@@ -2,10 +2,15 @@ package com.example.order;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -21,7 +26,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void increment(View view){
-
+     if(quantity==100)
+     {
+         Toast.makeText(this ,"You cant order more than 100 cups of coffee",Toast.LENGTH_SHORT).show();
+         return;
+     }
         quantity=quantity+1;
         display(quantity);
 
@@ -35,7 +44,11 @@ public class MainActivity extends AppCompatActivity {
         w=c1.isChecked();
     }
     public void decrement(View view){
-
+        if(quantity==1)
+        {
+            Toast.makeText(this ,"You cant order less than 1 cup of coffee",Toast.LENGTH_SHORT).show();
+            return;
+        }
         quantity=quantity-1;
         display(quantity);
     }
@@ -56,11 +69,25 @@ public class MainActivity extends AppCompatActivity {
         {
             price=(quantity*5);
         }
+        /*this edittext command is for entering the name */
+        EditText edittexr=(EditText)findViewById(R.id.edittxt);
+        Editable nameEditable=edittexr.getText();
+        String name = nameEditable.toString();
+        /*this edittext command is for entering the special suggestions */
+        EditText edittxts=(EditText)findViewById(R.id.edittxt2);
+        Editable nameEditable2=edittxts.getText();
+        String name2=nameEditable2.toString();
+String summary="My order summary is";
+String nam="Customer's name "+name+"\nDid you opted for Whipped cream "+w+"\nDid you opt for chocolate "+c+"\nAmount Due  $"+price+"\nSpecial suggestions by the customer are "+name2;
+displayMessage(nam);
 
-String name="Did you opted for wipped cream "+w+"\nDid you opted for choclate "+c+"\nAmount Due $"+price+"\nThank you for purchasing coffee\nYou are a valuable customer";
-displayMessage(name);
-
-
+        Intent intent=new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(intent.EXTRA_SUBJECT,summary);
+        intent.putExtra(intent.EXTRA_TEXT,nam);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
     private void displayMessage(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.textView4);

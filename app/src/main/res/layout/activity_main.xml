@@ -1,21 +1,74 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
     <EditText
+        android:id="@+id/edittxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
         android:hint="Enter your name"
-        android:id="@+id/edittxt"/>
+        android:inputType="text"
+        android:padding="16dp" />1
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        style="@style/GreenText"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="How many cups of coffee do you want" />
+
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/cof" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/GreenText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Quantity (Basic cost of one cup of coffee is $5)" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="decrement"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="2"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="increment"
+            android:text="+" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView5"
@@ -33,21 +86,11 @@
             android:text="Whipped Cream ($4 per cup of coffee)"
             android:onClick="whipped"/>
 
-
-    <CheckBox
-        android:id="@+id/checkBox2"
+    <ImageView
+        android:id="@+id/imageView9"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Chocolate ($6 per cup of coffee)"
-        android:onClick="choclate"/>
-
-    <TextView
-        android:id="@+id/textView"
-        style="@style/GreenText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Quantity (Basic cost of one cup of coffee is $5)" />
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/whip" />
 
 
     <LinearLayout
@@ -56,14 +99,109 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/button6"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:onClick="increment"
-            android:text="+" />
+            android:onClick="decrement2"
+            android:text="-" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView10"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="0"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="increment2"
+            android:text="+" />
+
+    </LinearLayout>
+
+
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chocolate ($6 per cup of coffee)"
+        android:onClick="choclate"/>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/choclaetopping" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="decrement3"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="0"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="increment3"
+            android:text="+" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        style="@style/GreenText"
+
+        android:text="How many cups of iced tea you want " />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/lemon" />
+
+    <TextView
+        android:id="@+id/textView8"
+        style="@style/GreenText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:padding="16dp"
+        android:text="Quantity (Basic cost of one cup iced tea is $3)" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="decrement1"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textView9"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -71,39 +209,45 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button4"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:onClick="decrement"
-            android:text="-" />
+            android:onClick="increment1"
+            android:text="+" />
+
     </LinearLayout>
-        <TextView
+
+    <EditText
+        android:id="@+id/edittxt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Any suggestions "
+        android:inputType="text" />
+
+    <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="Price" />
+            android:text="Order Summary"
+        style="@style/GreenText"/>
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="$10"
-            android:textStyle="bold" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="Any suggestions "
-            android:id="@+id/edittxt2"
-               />
-        <Button
-            android:id="@+id/button3"
-            android:padding="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="submitOrder"
-            android:text="ORDER" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="$10"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="submitOrder"
+        android:padding="16dp"
+        android:text="ORDER" />
+
+
 
 </LinearLayout>
 </ScrollView>
